@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+<h1 class="ml-3 mt-3">{{ portapp.title }}</h1>
+<div class="row ml-3 mt-3">
+    <div class="col-md-8">
+        <img src="{% static portapp.image %}" alt="" width="100%">
+    </div>
+    <div class="col-md-4">
+        <h5>About the project:</h5>
+        <p>{{ portapp.description }}</p>
+        <br>
+        <h5>Technology used:</h5>
+        <p>{{ portapp.technology }}</p>
+    </div>
+</div>
+{% endblock %}
+

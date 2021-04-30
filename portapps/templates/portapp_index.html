@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+
+<h1 class="mt-5 ml-5">Projects</h1>
+
+<div class="row mt-3 ml-4">
+{% for portapp in portapps %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <img class="card-img-top" src="{% static portapp.image %}">
+            <div class="card-body">
+                <h5 class="card-title">{{ portapp.title }}</h5>
+                <p class="card-text">{{ portapp.description }}</p>
+                <a href="{% url 'portapp_detail' portapp.pk %}"
+                   class="btn btn-primary">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
